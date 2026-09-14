@@ -4,6 +4,8 @@
 The add_integer function adds two integers.
 It accepts integer or float arguments.
 """
+
+
 def add_integer(a, b=98):
     """
         TypeError: If either of a or b is a non-integer and non-float.
