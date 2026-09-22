@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """define the function"""
 
+
 class Square:
     """A square class"""
     __size = None
