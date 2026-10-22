@@ -22,3 +22,4 @@ class CountedIterator:
 
     def get_count(self):
         return self.counter
+
