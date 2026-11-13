@@ -1,9 +1,10 @@
+
 #!/usr/bin/python3
-"""Defines a function that a serialzed string"""
+
+"""Defines a JSON-to-object function."""
 import json
 
 
-def to_json_string(my_str):
-    
-    """Convert a JSON string to a Python object."""
+def from_json_string(my_str):
+    """Return the Python object representation of a JSON string."""
     return json.loads(my_str)
