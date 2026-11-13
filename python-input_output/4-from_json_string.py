@@ -4,8 +4,10 @@ import json
 
 
 def to_json_string(my_obj):
-    """function returns JSON representation of object
-
-    return json string to python 
+    """Function returns object from JSON string
+    having
+        my_str: JSON string
+    Return:
+        Returns python object
     """
     return json.loads(my_obj)
