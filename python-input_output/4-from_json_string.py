@@ -1,3 +1,4 @@
+#!/bin/usr/python3
 """Defines a function that a serialzed string"""
 import json
 
