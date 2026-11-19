@@ -34,7 +34,9 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write("OK".encode('utf-8'))
 
         elif self.path == '/info':
-            self._set_headers(content_type='application/json')
+            self.send_response(200)
+            self.send_header('content-type', 'application/json')
+            self.end_headers()
             data = {
                 "version": "1.0",
                 "description": "A simple API built with http.server"
@@ -47,9 +49,9 @@ class HTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write('404 Not Found'.encode())
 
-            if __name__ == '__main__':
-                """Server initialization"""
-                server_address = ('', 8000)
-                httpserver = http.server.HTTPServer(server_address,
-                                                    HTTPHandler)
-                httpserver.serve_forever()
+
+if __name__ == "__main__":
+    server_address = ('localhost', 8000)
+    httpd = http.server.HTTPServer(server_address, HTTPHandler)
+    print("Server running on port 8000")
+    httpd.serve_forever()
