@@ -13,13 +13,10 @@ if __name__ == '__main__':
         db=argv[3]
     )
     cursor = database.cursor()
-
-    cursor.execute(
-        "SELECT * FROM `states` "
-        "WHERE BINARY `name` = %s "
-        "ORDER BY id",
-        (argv[4],)
-        )
+    cursor.execute("SELECT * \
+                    FROM `states` \
+                    WHERE BINARY `name` = '{}' \
+                    ORDER BY id".format(argv[4]))
     for state in cursor.fetchall():
         print(state)
 
