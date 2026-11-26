@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module for selecting cities """
+"""module for selecting cities by state """
 
 if __name__ == '__main__':
     from sys import argv
@@ -20,10 +20,12 @@ if __name__ == '__main__':
         'INNER JOIN states ON states.id = cities.state_id '
         'ORDER BY cities.id ASC'
     )
-    city = []
+    cities = []
     for city in cursor.fetchall():
         if city[1] == argv[4]:
-            print(city[0], end=", ")
+            cities.append(city[0])
+
+    print(", ".join(cities))
 
     if cursor is not None:
         cursor.close()
