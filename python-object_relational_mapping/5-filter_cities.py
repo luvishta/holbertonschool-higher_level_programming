@@ -21,8 +21,8 @@ if __name__ == '__main__':
     )
     cities = []
     for city in cursor.fetchall():
-         if city[1] == argv[4]:
-             cities.append(city[0])
+        if city[1] == argv[4]:
+            cities.append(city[0])
 
     print(", ".join(cities))
 
