@@ -15,15 +15,14 @@ if __name__ == '__main__':
     cursor = database.cursor()
 
     cursor.execute(
-        'SELECT cities.id, cities.name, states.name '
+        'SELECT  cities.name , states.name '
         'FROM cities '
         'INNER JOIN states ON states.id = cities.state_id '
-        'ORDER BY cities.id ASC'
     )
     cities = []
     for city in cursor.fetchall():
-        if city[1] == argv[4]:
-            cities.append(city[0])
+         if city[1] == argv[4]:
+             cities.append(city[0])
 
     print(", ".join(cities))
 
