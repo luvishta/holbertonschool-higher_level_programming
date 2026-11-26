@@ -15,7 +15,7 @@ if __name__ == '__main__':
     cursor = database.cursor()
 
     cursor.execute(
-        'SELECT  cities.name , states.name '
+        'SELECT  cities.name ,states.name '
         'FROM cities '
         'INNER JOIN states ON states.id = cities.state_id '
     )
